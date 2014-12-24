@@ -4119,17 +4119,16 @@ var Easyrtc = function() {
         }
 
         function processAnswer(caller, msgData) {
-
             delete acceptancePending[caller];
-            peerConns[caller].connectionAccepted = true;
 
             //
             // if we've discarded the peer connection, ignore the answer.
             //
-            if( !peerConns[caller]) {
+            if (!peerConns[caller]) {
                 return;
             }
 
+            peerConns[caller].connectionAccepted = true;
 
             if (peerConns[caller].wasAcceptedCB) {
                 peerConns[caller].wasAcceptedCB(true, caller);
