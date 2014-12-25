@@ -3873,7 +3873,7 @@ var Easyrtc = function() {
     //
     // checks to see if a particular peer is in any room at all.
     //
-    function isPeerInAnyRoom(id) {
+    self.isPeerInAnyRoom = function (id) {
         var roomName;
         for (roomName in lastLoggedInList) {
             if (!lastLoggedInList.hasOwnProperty(roomName)) {
